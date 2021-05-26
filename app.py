@@ -138,6 +138,7 @@ def user(user_id):
     if not user:
         return f"""
             <h1>No user found</p>
+            <a href="/">Go start the proccess</a>
         """
 
     if user.get('declined'):
@@ -199,4 +200,6 @@ def user(user_id):
     return f"""
     
             <h1>Nothing to Show you</h1>
+
+            <a href="/">Go start the proccess</a>
     """

@@ -135,6 +135,11 @@ def user(user_id):
 
     user = db.get(user_id)
 
+    if not user:
+        return f"""
+            <h1>No user found</p>
+        """
+
     if user.get('declined'):
         return f"""
             <h1>Declined Sorry Bye</p>
@@ -193,20 +198,5 @@ def user(user_id):
 
     return f"""
     
-            <p>Hello, World! {str(db.get(user_id))}</p>
-    
-            <h1>We found User on Section, Please confirm is it the right user?</h1>
-            <form method="post">
-                <input type="hidden" name="action" value="yes_match_senctions" />
-                <div>
-                    <input type="submit" value="Yes" />
-                </div>
-            </form>
-
-            <form method="post">
-                <input type="hidden" name="action" value="no_match_senctions" />
-                <div>
-                    <input type="submit" value="No" />
-                </div>
-            </form>
+            <h1>Nothing to Show you</h1>
     """

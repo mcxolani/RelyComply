@@ -38,7 +38,7 @@ def checkPep(user_id):
         db[user_id]['currentStep'] = 'confrimPep'
         db[user_id]['status'] = 'idle'
     else:
-        threading.Thread(target=riskAsses, args=(user_id, )).start()
+        threading.Thread(target=riskAsses, args=(user_id, False)).start()
 
 def checkSanctions(user_id):
 
